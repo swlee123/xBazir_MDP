@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/text_food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Name"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_food_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity: 0" />
+
+    <TextView
+        android:id="@+id/text_spoiled_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spoiled: 0"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/text_bought_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bought on: 01/01/2023" />
+
+    <TextView
+        android:id="@+id/text_remaining_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Days to expiry: 0" />
+    <!-- Buttons for actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:paddingTop="8dp">
+    <Button
+        android:id="@+id/button_set_used"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Used"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/button_set_spoiled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Spoiled"
+        android:foreground="?attr/selectableItemBackground"
+        android:background="@drawable/rounded_button"
+        android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</LinearLayout>

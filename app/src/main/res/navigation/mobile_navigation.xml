@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.xbazir.ui.home.HomeFragment"
+        android:label="Main Menu"
+        tools:layout="@layout/fragment_home"/>
+
+
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.xbazir.ui.GroceryList.GroceryListFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_grocery_list" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.xbazir.ui.ExpiryTracker.ExpiryTrackerFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_expiry_tracker" />
+
+    <fragment
+        android:id="@+id/nav_create_grocery"
+        android:name="com.example.xbazir.ui.GroceryList.CreateGroceryListFragment"
+        android:label="Create Grocery List"
+        tools:layout="@layout/fragment_create_grocery_list"/>
+
+    <fragment
+        android:id="@+id/nav_add_food_to_list"
+        android:name="com.example.xbazir.ui.GroceryList.AddFoodFragment"
+        android:label="Add Food"
+        tools:layout="@layout/fragment_add_food"/>
+
+    <fragment
+        android:id="@+id/nav_view_grocery"
+        android:name="com.example.xbazir.ui.GroceryList.ViewGroceryFragment"
+        android:label="View Grocery"
+        tools:layout="@layout/fragment_view_grocery" />
+
+    <fragment
+        android:id="@+id/nav_recipe_recommender"
+        android:name="com.example.xbazir.ui.RecipeRecommender.RecipeRecommenderFragment"
+        android:label="Recipe Recommender"
+        tools:layout="@layout/fragment_recipe_recommender_landing" />
+
+    <fragment
+        android:id="@+id/nav_recipe_result"
+        android:name="com.example.xbazir.ui.RecipeRecommender.RecipeDetailsFragment"
+        android:label="Recipe"
+        tools:layout="@layout/fragment_recipe_details"/>
+
+
+
+    <action
+        android:id="@+id/action_groceryList_to_viewGrocery"
+        app:destination="@id/nav_view_grocery" />
+
+</navigation>
