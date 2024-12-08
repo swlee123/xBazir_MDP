@@ -1,39 +1,44 @@
 package com.example.xbazir;
 
-import com.example.xbazir.ui.ExpiryTracker.ExpiryTrackerAdapter;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import android.app.Application;
+import android.icu.util.Calendar;
+
+import com.example.xbazir.ui.ExpiryTracker.ExpiryTrackerViewModel;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 public class UnitTest {
 
-
-    // Expiry Tracker Unit Test
     @Test
-    // Test 1 : Test usage of testCalculateRemainingDays() to give number of days to certain date in future.
-    public void testCalculateRemainingDays() {
-        ExpiryTrackerAdapter adapter = new ExpiryTrackerAdapter(null, null, null);
+    public void testCalculateRemainingDays() throws Exception {
+        // Mock the Application context
+        Application mockApplication = Mockito.mock(Application.class);
 
-        String futureDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-                .format(new Date(System.currentTimeMillis() + (5 * 24 * 60 * 60 * 1000)));
-        // 5th date starting from today's date , so answer should be 4 days  , because today count too
+        // Create an instance of ExpiryTrackerViewModel
+        ExpiryTrackerViewModel viewModel = new ExpiryTrackerViewModel(mockApplication);
 
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
+        // Define the current date for testing
+        Date currentDate = new Date();
 
+        // Add 24 hours to the current date to get the expiry date
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(currentDate);
+        calendar.add(Calendar.HOUR_OF_DAY, 24);
+        Date expiryDate = calendar.getTime();
+        String expiryDateString = format.format(expiryDate);
+
+        // Expected remaining days is 1
+        int expectedDays = 1;
+        int actualDays = viewModel.calculateRemainingDays(expiryDateString);
+        assertEquals(expectedDays, actualDays);
     }
-
-    // Grocery List Unit Test
-
-    // Recipe Recommender Unit Test
-
-    // Home Unit Test
 }
-

@@ -32,6 +32,8 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    
+
 }
 
 dependencies {
@@ -46,13 +48,20 @@ dependencies {
     implementation ("androidx.core:core-ktx:1.10.1")
     implementation ("androidx.work:work-runtime-ktx:2.8.1")
 
+    testImplementation ("org.mockito:mockito-core:3.11.2")
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1")
 
+
+    testImplementation ("org.junit.jupiter:junit-jupiter-api:5.8.1")
+    testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 
 
     implementation ("androidx.room:room-runtime:2.5.0")
     annotationProcessor ("androidx.room:room-compiler:2.5.0")
-    testImplementation ("org.mockito:mockito-core:+")
-    testImplementation("junit:junit:4.13.2")
+
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+
+
 }
